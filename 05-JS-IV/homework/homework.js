@@ -73,6 +73,12 @@ function tienePropiedad(objeto, propiedad) {
     // "propiedad" es un string
     // De lo contrario, devuelve "false"
     // Tu código:
+    for (const key in objeto) {
+        if (key != propiedad) {
+            return !true;
+        }
+    }
+    return true;
 }
 
 function verificarPassword(usuario, password) {
@@ -80,12 +86,15 @@ function verificarPassword(usuario, password) {
     // Devuelve "true" si coinciden
     // De lo contrario, devuelve "false"
     // Tu código:
+    return usuario.password == password;
 }
 
 function actualizarPassword(usuario, nuevaPassword) {
     // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevaPassword"
     // Devuelve el objeto
     // Tu código:
+    usuario.password = nuevaPassword;
+    return usuario;
 }
 
 function agregarAmigo(usuario, nuevoAmigo) {
@@ -93,6 +102,8 @@ function agregarAmigo(usuario, nuevoAmigo) {
     // Agrega "nuevoAmigo" al final de ese array
     // Devuelve el objeto "usuario"
     // Tu código:
+    usuario.amigos.push(nuevoAmigo);
+    return usuario;
 }
 
 function pasarUsuarioAPremium(usuarios) {
@@ -101,6 +112,10 @@ function pasarUsuarioAPremium(usuarios) {
     // Define cada propiedad "esPremium" de cada objeto como "true"
     // Devuelve el array de usuarios
     // Tu código:
+    for (const usuario of usuarios) {
+        usuario.esPremium = true;
+    }
+    return usuarios;
 }
 
 function sumarLikesDeUsuario(usuario) {
