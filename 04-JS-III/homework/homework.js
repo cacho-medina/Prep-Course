@@ -140,6 +140,9 @@ function empiezaConNueve(n) {
     //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero
     //inicia con 9 y false en otro caso.
     //Escribe tu código aquí
+    //n.toString convierte el entero n en string, lo que permite que se le pueda aplicar metodos de string como el startsWith,
+    //el cual retorna true si la cadena comienza con los caracteres especificados
+    return n.toString().startsWith("9");
 }
 
 function todosIguales(arreglo) {
